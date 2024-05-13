@@ -13,11 +13,17 @@ double f2 (double x);
 
 double f3 (double x);
 
-double f4(double x);
+double f4(double x){
+    return 2 * x;
+}
 
-double f5(double x);
+double f5(double x){
+    return 3 + x;
+}
 
-double f6(double x);
+double f6(double x){
+    return 1 - x*x;
+}
 
 double (*functions[6])(double) = {&f1, &f2, &f3, &f4, &f5, &f6};
 
