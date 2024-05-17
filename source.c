@@ -141,7 +141,7 @@ void print_help_info(void){
 }
 
 void print_error(void){
-    printf("you have used incorrect argument.\n Please use -help to check list of commands\n ");
+    printf("You have used incorrect argument.\n Please use -help to check list of commands\n ");
 }
 
 int main (int argc, char ** argv) {
