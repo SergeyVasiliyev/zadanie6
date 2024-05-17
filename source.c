@@ -187,4 +187,6 @@ int main (int argc, char ** argv) {
         } else {
             print_error();
         }
+    }
+}
     
