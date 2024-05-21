@@ -16,7 +16,7 @@ double f3 (double x);
 
 // фунцкии тестовые
 double f4(double x){
-    return 1 / x;
+    return 1 / (x + 3);
 }
 
 double f5(double x){
@@ -24,7 +24,7 @@ double f5(double x){
 }
 
 double f6(double x){
-    return (-2) * x - 4;
+    return (-2) * x - 2;
 }
 
 // список всех 6 функций
