@@ -53,13 +53,26 @@ double root(double (*f)(double), double (*g)(double), double a, double b, double
 }
 
 // фунцкия, находящая интеграл в общем виде
-double integral(double (*f)(double), double a, double b, double eps){
-    double s = 0, fl = a;
-    while (fl < b){
-        s += f(fl) * eps;
-        fl += eps;
-    }
-    return s;
+double integral(double (*f)(double), double a, double b, double eps) {
+    double total_area = 0.0;
+    double prev_area = 0.0;
+    double step;
+    int n = 1;
+    
+    do {
+        prev_area = total_area;
+        total_area = 0.0;
+        step = (b - a) / n;
+
+        for (int i = 0; i < n; i++) {
+            double x = a + i * step;
+            total_area += f(x) * step;
+        }
+
+        n *= 2;
+    } while (fabs(total_area - prev_area) > eps);
+
+    return total_area;
 }
 
 // вывод точек
