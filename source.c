@@ -57,7 +57,7 @@ double integral(double (*f)(double), double a, double b, double eps) {
     double total_area = 0.0;
     double prev_area = 0.0;
     double step;
-    int n = 1;
+    int n = 10;
     
     do {
         prev_area = total_area;
@@ -65,14 +65,15 @@ double integral(double (*f)(double), double a, double b, double eps) {
         step = (b - a) / n;
 
         for (int i = 0; i < n; i++) {
-            double x = a + i * step;
-            total_area += f(x) * step;
+            double x = a + (i - 0.5) * step;
+            total_area += f(x);
         }
-
+        
+        total_area *= step;
         n *= 2;
     } while (fabs(total_area - prev_area) > eps);
 
-    return total_area;
+    return prev_area;
 }
 
 // вывод точек
